@@ -1,0 +1,9 @@
+Http header : get accept language
+
+    NSDictionary *headers = ((NSHTTPURLResponse *)navigationResponse.response).allHeaderFields;
+    NSString *AcceptLanguage = [headers valueForKey:@"Accept-Language"];
+    NSLog(@"headers - Accept-Language = %@", AcceptLanguage); // NULL for original setting.
+    
+Http header : set accept language
+  NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:YourUrlStr]];
+  [request setValue:@"en" forHTTPHeaderField:@"Accept-Language"];
